@@ -56,6 +56,9 @@
             background-color: #E5E5E5;
             background-image: url('<?php echo $url . $academia["fundo_getree"] ?>');
             font-family: 'Montserrat', sans-serif;
+            background-size: cover;
+            background-repeat: no-repeat;
+            min-height: 100vh;
         }
 
         svg{
