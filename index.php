@@ -1,12 +1,14 @@
 <?php
     require "classes/Url.php";
     $slug_academia = Url::getUrl(0);
-    $host = 'localhost';
-    $user = 'root';
-    $pass = '';
-    $dbname = 'gefit';
-    $url = 'http://localhost/gefit/public/';
-
+    $host = '127.0.0.1';
+    $user = 'gefit2';
+    $pass = 'Adm77gefit2';
+    $dbname = 'gefit2';
+    $url = 'https://gefit.com.br/';
+    if(empty($slug_academia)){
+        header("Location: https://gefit.com.br");
+    }
     try{
         $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);
         $stmt = $pdo->prepare(" SELECT id, nome, logo, email, url, whatsapp, facebook, facebook_getree, linkedin, linkedin_getree, instagram, instagram_getree, 
@@ -17,6 +19,10 @@
                                 FROM academias WHERE slug_getree = ?");
         
         $stmt->execute([$slug_academia]);
+	$rows = $stmt->rowCount();
+	if(!$rows){
+	    header("Location: https://gefit.com.br");
+	}
         $academia = $stmt->fetch(PDO::FETCH_ASSOC);
     }catch(PDOException $e) {
         die("erro");
@@ -197,7 +203,7 @@
                             <a href="<?php echo $elemento["link"] ?>" target="_blank" class="card-link">
                                 <div class="row">
                                     <div class="col-12 col-md-3 text-center text-md-left py-3 pl-2 pr-0 d-flex align-items-center justify-content-center">
-                                        <img style="width: 100%; max-width: 70px;" src="<?php echo $url . $elemento["imagem"] ?>" alt="">
+                                        <img style="width: 70px; height: 70px; border-radius: 50%;" src="<?php echo $url . $elemento["imagem"] ?>" alt="">
                                     </div>
                                     <div class="col-12 col-md-9 text-center text-md-left pr-4 py-3 d-flex align-items-center justify-content-center justify-content-md-start">
                                         <span><?php echo $elemento["titulo"] ?></span>
