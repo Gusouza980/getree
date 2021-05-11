@@ -207,7 +207,7 @@
                             <a href="<?php echo $elemento["link"] ?>" target="_blank" class="card-link">
                                 <div class="row">
                                 <?php
-                                    if(!empty($elemento["logo"])){
+                                    if(!empty($elemento["imagem"])){
                                 ?>
                                         <div class="col-12 col-md-3 text-center text-md-left py-3 pl-2 pr-0 d-flex align-items-center justify-content-center">
                                             <img style="width: 70px; height: 70px; border-radius: 50%;" src="<?php echo $url . $elemento["imagem"] ?>" alt="">
