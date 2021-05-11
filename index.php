@@ -206,12 +206,24 @@
                         <div class="card-content mt-3">
                             <a href="<?php echo $elemento["link"] ?>" target="_blank" class="card-link">
                                 <div class="row">
-                                    <div class="col-12 col-md-3 text-center text-md-left py-3 pl-2 pr-0 d-flex align-items-center justify-content-center">
-                                        <img style="width: 70px; height: 70px; border-radius: 50%;" src="<?php echo $url . $elemento["imagem"] ?>" alt="">
-                                    </div>
-                                    <div class="col-12 col-md-9 text-center text-md-left pr-4 py-3 d-flex align-items-center justify-content-center justify-content-md-start">
-                                        <span><?php echo $elemento["titulo"] ?></span>
-                                    </div>
+                                <?php
+                                    if(!empty($elemento["logo"])){
+                                ?>
+                                        <div class="col-12 col-md-3 text-center text-md-left py-3 pl-2 pr-0 d-flex align-items-center justify-content-center">
+                                            <img style="width: 70px; height: 70px; border-radius: 50%;" src="<?php echo $url . $elemento["imagem"] ?>" alt="">
+                                        </div>
+                                        <div class="col-12 col-md-9 text-center text-md-left pr-4 py-3 d-flex align-items-center justify-content-center justify-content-md-start">
+                                            <span><?php echo $elemento["titulo"] ?></span>
+                                        </div>
+                                <?php
+                                    }else{
+                                ?>
+                                        <div class="col-12 text-center text-md-left pr-4 py-3 d-flex align-items-center justify-content-center justify-content-md-start">
+                                            <span><?php echo $elemento["titulo"] ?></span>
+                                        </div>
+                                <?php
+                                    }
+                                ?>
                                 </div>
                             </a>
                         </div>
