@@ -152,7 +152,7 @@
             <div class="col-12 col-xl-4">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <img src="<?php echo $url . $academia["logo"] ?>" style="width: 150px; border-radius: 50%;" alt="Logo Academia">
+                        <img src="<?php echo $url . $academia["logo"] ?>" style="width: 150px; height: 150px; border-radius: 50%;" alt="Logo Academia">
                     </div>
                 </div>
                 <div class="row mt-4">
