@@ -218,7 +218,7 @@
                                 <?php
                                     }else{
                                 ?>
-                                        <div class="col-12 text-center text-md-left pr-4 py-3 d-flex align-items-center justify-content-center justify-content-md-start">
+                                        <div class="col-12 text-center pr-4 py-3 d-flex align-items-center justify-content-center justify-content-md-start">
                                             <span><?php echo $elemento["titulo"] ?></span>
                                         </div>
                                 <?php
