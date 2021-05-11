@@ -30,7 +30,7 @@
 
     try{
         $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);
-        $stmt = $pdo->prepare(" SELECT * FROM getree_elementos WHERE academia_id = ? ORDER BY posicao ASC");
+        $stmt = $pdo->prepare(" SELECT * FROM getree_elementos WHERE academia_id = ? ORDER BY posicao DESC");
         
         $stmt->execute([$academia["id"]]);
         $elementos = $stmt->fetchAll(PDO::FETCH_ASSOC);
