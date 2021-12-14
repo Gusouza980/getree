@@ -2,14 +2,14 @@
     require "classes/Url.php";
     $slug_academia = Url::getUrl(0);
     $host = '127.0.0.1';
-    // $user = 'gefit2';
-    // $pass = 'Adm77gefit2';
-    // $dbname = 'gefit2';
-    $user = 'root';
-    $pass = '';
-    $dbname = 'gefit';
-    // $url = 'https://gefit.com.br/';
-    $url = 'gefit.test/';
+    $user = 'gefit2';
+    $pass = 'Adm77gefit2';
+    $dbname = 'gefit2';
+    // $user = 'root';
+    // $pass = '';
+    // $dbname = 'gefit';
+    $url = 'https://gefit.com.br/';
+    // $url = 'gefit.test/';
     if(empty($slug_academia)){
         header("Location: https://gefit.com.br");
     }
