@@ -2,14 +2,14 @@
     require "classes/Url.php";
     $slug_academia = Url::getUrl(0);
     $host = '127.0.0.1';
-    $user = 'gefit2';
-    $pass = 'Adm77gefit2';
-    $dbname = 'gefit2';
-    // $user = 'root';
-    // $pass = '';
-    // $dbname = 'gefit';
-    $url = 'https://gefit.com.br/';
-    // $url = 'gefit.test/';
+    // $user = 'gefit2';
+    // $pass = 'Adm77gefit2';
+    // $dbname = 'gefit2';
+    $user = 'root';
+    $pass = '';
+    $dbname = 'gefit';
+    // $url = 'https://gefit.com.br/';
+    $url = 'gefit.test/';
     if(empty($slug_academia)){
         header("Location: https://gefit.com.br");
     }
@@ -67,7 +67,12 @@
 
                 $stmt = $pdo->prepare("SELECT * FROM getree_visitantes WHERE ip = ?");
                 $stmt->execute([$ip]);
-                $visitante = $pdo->lastInsertId();
+
+                $stmt = $pdo->prepare("SELECT * FROM getree_visitantes WHERE ip = ?");
+                $stmt->execute([$ip]);
+                
+                $visitante = $stmt->fetch(PDO::FETCH_ASSOC);
+                $visitante = $visitante["id"];
             }else{
                 $visitante = $stmt->fetch(PDO::FETCH_ASSOC);
                 $visitante = $visitante["id"];
